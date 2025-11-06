@@ -1,0 +1,34 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Project Vajra",
+      "desc": "A Python-based pentesting toolkit with a React + Electron frontend for network scanning and vulnerability analysis.",
+      "stargazerCount": 124
+    },
+    {
+      "id": 2,
+      "title": "IoT VR Gauntlet",
+      "desc": "A gesture-controlled VR glove integrating flex sensors, haptic feedback, and BLE communication for immersive control.",
+      "stargazerCount": 256
+    },
+    {
+      "id": 3,
+      "title": "ChatConnect",
+      "desc": "A real-time chat web app using React, Node.js, and Socket.IO with secure authentication and message storage.",
+      "stargazerCount": 98
+    },
+    {
+      "id": 4,
+      "title": "CryptoVault",
+      "desc": "A decentralized file storage and encryption platform built with IPFS and blockchain integration.",
+      "stargazerCount": 312
+    },
+    {
+      "id": 5,
+      "title": "FitTrack",
+      "desc": "A health tracking web app that monitors calories, workouts, and progress using interactive charts and APIs.",
+      "stargazerCount": 176
+    }
+  ]
+}

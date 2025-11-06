@@ -1,26 +1,76 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* 🌙 Default = Dark Theme */
+.link {
+  color: var(--link);
+  transition: color 0.25s ease;
+}
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: var(--color-gray-900);
+  --text: var(--color-gray-300);
+  --link: var(--color-gray-300);
+  --hr: var(--color-gray-800);
+  --prose-headings: var(--color-gray-100);
+  --prose-links: var(--color-sky-400);
+  --prose-code: var(--color-sky-300);
+  --prose-blockquote: var(--color-gray-400);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* 🌞 Light Theme */
+[data-theme="light"] {
+  --bg: var(--color-white);
+  --text: var(--color-gray-700);
+  --link: var(--color-gray-700);
+  --hr: var(--color-gray-200);
+  --prose-headings: var(--color-gray-900);
+  --prose-links: var(--color-blue-600);
+  --prose-code: var(--color-sky-700);
+  --prose-blockquote: var(--color-gray-500);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* 🧭 Body Layout + Colors */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply container mx-auto max-w-2xl font-sans leading-relaxed;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* ─── Horizontal Line ─── */
+hr {
+  @apply my-8 border-0 h-px;
+  background-color: var(--hr);
+}
+
+/* 🧾 MDX / Prose Content */
+.prose {
+  color: var(--text);
+  max-width: 65ch;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  color: var(--prose-headings);
+}
+
+.prose a {
+  color: var(--prose-links);
+  text-decoration: underline;
+}
+
+.prose strong {
+  color: var(--prose-headings);
+}
+
+.prose code {
+  color: var(--prose-code);
+  background-color: color-mix(in srgb, var(--bg) 90%, var(--text));
+  @apply px-1 py-0.5 rounded;
+}
+
+.prose blockquote {
+  border-left: 4px solid var(--prose-links);
+  color: var(--prose-blockquote);
+  @apply pl-4 italic;
 }
